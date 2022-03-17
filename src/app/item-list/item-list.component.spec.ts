@@ -25,6 +25,6 @@ describe('ItemListComponent', () => {
 
   it('should show a list of items', () => {
     // check and see if an array gets returned after the api call.
-    expect(fixture.getItems()).toBeTruthy();
+    expect(component.getItems()).toBeTruthy();
   });
 });
