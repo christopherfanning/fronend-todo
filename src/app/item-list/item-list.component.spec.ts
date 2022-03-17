@@ -9,6 +9,7 @@ describe('ItemListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ ItemListComponent ]
     })
     .compileComponents();
