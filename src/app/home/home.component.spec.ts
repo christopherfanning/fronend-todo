@@ -22,4 +22,8 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a home logo', () => {
+    expect(fixture.nativeElement.querySelector('.logo')).toBeTruthy();
+  })
 });
