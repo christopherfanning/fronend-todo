@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ItemListComponent } from './item-list.component';
+import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 
 describe('ItemListComponent', () => {
   let component: ItemListComponent;
