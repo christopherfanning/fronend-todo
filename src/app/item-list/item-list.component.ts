@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {DataService} from "../data.service";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-item-list',
@@ -9,22 +11,19 @@ import {Observable} from "rxjs";
 })
 export class ItemListComponent implements OnInit {
 
-  items: any;
+  items :any;
+  itemsSubject = new Subject();
 
-  constructor(private http: HttpClient) {
-    this.items = [];
+  constructor(private http: HttpClient,
+              private dataService: DataService) {
   }
 
-  getItems() {
-    return this.http.get('http://localhost:8080/api/item');
-  }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/api/item').subscribe((res) => {
-      console.log("Got the items!");
-      this.items = res;
-    })
 
+      this.dataService.getItems().subscribe( (res:any) => {
+        this.items = res;
+      })
     console.log(this.items);
 
   }
