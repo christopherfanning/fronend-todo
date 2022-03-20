@@ -1,1 +1,11 @@
 <p>add-item works!</p>
+
+<div class="model-test" >
+ <h1>Add list item</h1>
+  <input type="text" name="" id="title" [(ngModel)]="title" placeholder="title">
+  <input type="text" name="" id="description" [(ngModel)]="description" placeholder="description">
+
+  <button type="submit" (click)="addItem(title, description)">Submit!</button>
+
+</div>
+
